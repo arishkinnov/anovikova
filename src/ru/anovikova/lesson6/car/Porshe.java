@@ -1,13 +1,9 @@
 package ru.anovikova.lesson6.car;
 
 public class Porshe extends Car {
-    private String color;
-    private String model;
 
     public Porshe(String color, String model) {
         super(color, model, new Manufacturer("Porshe", "kjnjkhnbjkl"));
-        this.color = color;
-        this.model = model;
     }
 
     @Override
@@ -35,6 +31,4 @@ public class Porshe extends Car {
     public void stop() {
         driving = false;
     }
-
-
 }

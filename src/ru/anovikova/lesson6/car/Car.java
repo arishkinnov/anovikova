@@ -1,8 +1,8 @@
 package ru.anovikova.lesson6.car;
 
 public abstract class Car {
-    private String color;
-    private String model;
+    protected String color;
+    protected String model;
     protected Manufacturer manufacturer;
     protected boolean running = false;
     protected boolean driving = false;
