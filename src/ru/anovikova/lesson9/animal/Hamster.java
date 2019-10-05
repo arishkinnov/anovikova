@@ -6,7 +6,7 @@ public class Hamster extends Animal implements Run {
     private String name;
 
     public Hamster(String name) {
-        this.name = name;
+        super(name);
     }
 
     @Override
@@ -16,6 +16,6 @@ public class Hamster extends Animal implements Run {
 
     @Override
     public void run() {
-        System.out.println("Хомяк " + name + " бежит.");
+        System.out.println("Хомяк " + getName() + " бежит.");
     }
 }

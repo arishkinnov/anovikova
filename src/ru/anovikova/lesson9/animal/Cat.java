@@ -4,10 +4,9 @@ import ru.anovikova.lesson9.actions.Run;
 import ru.anovikova.lesson9.actions.Swim;
 
 public class Cat extends Animal implements Run, Swim {
-     private String name;
 
     public Cat(String name) {
-        this.name = name;
+        super(name);
     }
 
     @Override
@@ -17,11 +16,11 @@ public class Cat extends Animal implements Run, Swim {
 
     @Override
     public void run() {
-        System.out.println("Кошка " + name + " бежит.");
+        System.out.println("Кошка " + getName() + " бежит.");
     }
 
     @Override
     public void swim() {
-        System.out.println("Кошка " + name + " плавает.");
+        System.out.println("Кошка " + getName() + " плавает.");
     }
 }

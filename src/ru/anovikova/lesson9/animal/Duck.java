@@ -5,10 +5,9 @@ import ru.anovikova.lesson9.actions.Run;
 import ru.anovikova.lesson9.actions.Swim;
 
 public class Duck extends Animal implements Run, Swim, Fly {
-     private String name;
 
     public Duck(String name) {
-        this.name = name;
+        super(name);
     }
 
     @Override
@@ -18,17 +17,17 @@ public class Duck extends Animal implements Run, Swim, Fly {
 
     @Override
     public void run() {
-        System.out.println("Утка " + name + " бежит.");
+        System.out.println("Утка " + getName() + " бежит.");
     }
 
     @Override
     public void swim() {
-        System.out.println("Утка  " + name + " плавает.");
+        System.out.println("Утка  " + getName() + " плавает.");
     }
 
     @Override
     public void fly() {
-        System.out.println("Утка  " + name + " летает.");
+        System.out.println("Утка  " + getName() + " летает.");
 
     }
 }

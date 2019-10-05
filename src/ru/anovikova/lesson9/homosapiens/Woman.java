@@ -1,12 +1,11 @@
 package ru.anovikova.lesson9.homosapiens;
 
 public class Woman extends Human {
-    private String name;
     private String race;
     private Man husband;
 
     public Woman(String name, String race) {
-        this.name = name;
+        super(name);
         this.race = race;
     }
 
