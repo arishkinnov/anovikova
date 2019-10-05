@@ -34,7 +34,7 @@ public class Man extends Human {
 
     @Override
     public void think() {
-        System.out.println("Мужчина " + name + " думает");
+        System.out.println("Мужчина " + getName() + " думает");
 
     }
 
@@ -45,13 +45,13 @@ public class Man extends Human {
 
     @Override
     public void run() {
-        System.out.println("Мужчина " + name + " бежит.");
+        System.out.println("Мужчина " + getName() + " бежит.");
 
     }
 
     @Override
     public void swim() {
-        System.out.println("Мужчина " + name + " плавает");
+        System.out.println("Мужчина " + getName() + " плавает");
 
     }
 }
