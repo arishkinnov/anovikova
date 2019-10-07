@@ -15,17 +15,20 @@ public class Mother {
         String food = reader.readLine();
 
 
-        Food food1 = Food.valueOf(food);
-
-        Child child = new Child();
-        String reply;
         try {
-            reply = child.eat(food1);
-        } catch (Exception e) {
-            reply = e.getMessage();
+            Food food1 = Food.valueOf(food);
+
+            Child child = new Child();
+            String reply;
+            try {
+                reply = child.eat(food1);
+            } catch (Exception e) {
+                reply = e.getMessage();
+            }
+
+            System.out.println("Reply = " + reply);
+        } catch(IllegalArgumentException e) {
+            System.out.println("Возникла ошибка при попытке получить константу. Выполнение программы будет завершено");
         }
-
-        System.out.println(reply);
     }
-
 }
