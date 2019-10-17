@@ -13,7 +13,7 @@ public class Main {
 
         String line = reader.readLine();
 
-        String regex = "бяка";
+        String regex = "(?iu)бяка";
         Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(line);
         String censorship = matcher.replaceAll("вырезано цензурой");
