@@ -9,7 +9,7 @@ import java.util.Scanner;
 import static java.math.BigDecimal.ROUND_HALF_EVEN;
 
 public class CashVoucher {
-    private static final String HEADER_FORMAT = "%-20s %6s %10s %11s";
+    private static final String HEADER_FORMAT = "%-20s %6s %10s %11s\n";
     private static final String ROW_FORMAT = "%-20s %6.2f x %6.3f %13s \n";
     private static final String TOTAL_FORMAT = "%-41s %8.2f\n";
 
@@ -41,13 +41,15 @@ public class CashVoucher {
 
                     count++;
                 }
-                System.out.println(String.format(HEADER_FORMAT, "Наименование", "Цена", "Кол-во", "Стоимость"));
+                System.out.printf(HEADER_FORMAT, "Наименование", "Цена", "Кол-во", "Стоимость");
+                System.out.println("==================================================");
                 BigDecimal total = new BigDecimal(0).setScale(2, ROUND_HALF_EVEN);
                 for (Product p : products) {
-                    String sum = String.format("%.2f", p.getAmount() * p.getPrice()).replaceAll(",", ".");
+                    String sumString = String.format("%.2f", p.getAmount() * p.getPrice());
                     total = total.add(new BigDecimal(p.getAmount() * p.getPrice()).setScale(2, ROUND_HALF_EVEN));
-                    System.out.printf(ROW_FORMAT, p.getTitle(), p.getPrice(), p.getAmount(), String.format("=%s", sum));
+                    System.out.printf(ROW_FORMAT, p.getTitle(), p.getPrice(), p.getAmount(), String.format("=%s", sumString));
                 }
+                System.out.println("==================================================");
                 System.out.printf(TOTAL_FORMAT, "Итого:", total.doubleValue());
             } catch (Exception e) {
                 System.out.println(e.getMessage());
