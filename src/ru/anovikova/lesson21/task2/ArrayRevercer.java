@@ -46,10 +46,9 @@ public class ArrayRevercer {
             int maxIteration = getMaxIteration(array.length);
             int lastIndex = array.length - 1;
             for (int index = 0; index < maxIteration; index++) {
-                int[] begin = array[index];
-                int[] end = array[lastIndex - index];
-                array[index] = end;
-                array[lastIndex - index] = begin;
+                int[] temp = array[index];
+                array[index] = array[lastIndex - index];
+                array[lastIndex - index] = temp;
             }
             reverse(value1);
         }
@@ -59,10 +58,9 @@ public class ArrayRevercer {
         int maxIteration = getMaxIteration(array.length);
         int lastIndex = array.length - 1;
         for (int index = 0; index < maxIteration; index++) {
-            int begin = array[index];
-            int end = array[lastIndex - index];
-            array[index] = end;
-            array[lastIndex - index] = begin;
+            int temp = array[index];
+            array[index] = array[lastIndex - index];
+            array[lastIndex - index] = temp;
         }
     }
 
