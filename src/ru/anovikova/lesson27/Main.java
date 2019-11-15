@@ -8,9 +8,12 @@ public class Main {
         System.out.print("Введите количество значений последовательности Фибоначчи:");
         Scanner scanner = new Scanner(System.in);
         int size = scanner.nextInt();
-
-        printArray(FibonacciSeries.compile(size));
-        printArray(FibonacciSeries.compileRecursion(size));
+        try {
+            printArray(FibonacciSeries.compileRecursion(size));
+            printArray(FibonacciSeries.compile(size));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     private static void printArray(int[] arr) {
